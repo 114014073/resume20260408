@@ -8,155 +8,127 @@
   <style>
   body {
     font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-    /* 背景使用淺米色，比純白更舒服 */
     background: #f4f7f4; 
     margin: 0;
-    padding: 40px 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
     color: #333;
   }
 
+  /* 整體容器改為 Flex 佈局 */
   .container {
-    max-width: 850px;
-    margin: auto;
+    max-width: 1000px;
+    width: 100%;
     background: #ffffff;
-    border-radius: 20px; /* 圓角加大更顯柔和 */
-    box-shadow: 0 15px 35px rgba(46, 78, 46, 0.1); /* 帶點綠色的陰影 */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(46, 78, 46, 0.1);
+    display: flex; /* 開啟兩欄模式 */
+    flex-wrap: wrap; /* 手機版會自動換行 */
     overflow: hidden;
   }
 
-  /* 上方區塊改為森林綠 */
-  .header {
-    display: flex;
-    align-items: center;
-    padding: 40px;
-    background: #2d5a27; /* 舒服的深森林綠 */
+  /* 左側側邊欄 (保留深綠色) */
+  .sidebar {
+    flex: 1;
+    min-width: 300px;
+    background: #2d5a27;
     color: white;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 30px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
   }
 
-  .info h1 {
-    margin: 0;
-    font-size: 32px;
+  .sidebar h1 {
+    margin: 10px 0;
+    font-size: 28px;
     letter-spacing: 2px;
   }
 
-  .info p {
-    margin: 8px 0;
+  .sidebar p {
     color: #e0eee0;
+    font-size: 15px;
+    margin: 5px 0;
   }
 
-  /* 內容區 */
+  /* 右側主內容區 */
+  .main-content {
+    flex: 2;
+    min-width: 350px;
+    padding: 40px;
+  }
+
   .section {
-    padding: 30px 40px;
-    border-bottom: 1px solid #edf2ed;
+    margin-bottom: 30px;
   }
 
-  /* 標題改為綠色系 */
   .section h2 {
-    margin-bottom: 15px;
     color: #2d5a27;
     font-size: 22px;
-    display: flex;
-    align-items: center;
-  }
-
-  /* 標題旁的小裝飾 */
-  .section h2::before {
-    content: "";
-    width: 6px;
-    height: 22px;
-    background: #84a98c; /* 淺草綠 */
-    margin-right: 12px;
-    border-radius: 3px;
+    border-left: 5px solid #84a98c;
+    padding-left: 15px;
+    margin-bottom: 15px;
   }
 
   .section p {
     line-height: 1.8;
     color: #4a4a4a;
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
-  /* 按鈕改為草綠色 */
-  .btn {
+  /* 播放器樣式優化 */
+  audio {
+    width: 100%;
     margin-top: 20px;
-    padding: 12px 25px;
+    filter: sepia(20%) saturate(70%) hue-rotate(80deg); /* 讓播放器顏色偏綠 */
+  }
+
+  /* 按鈕樣式 */
+  .btn {
+    padding: 10px 20px;
     background: #52796f;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    transition: 0.3s;
   }
 
   .btn:hover {
     background: #354f52;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 </style>
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="header">
-      <img src="images/photo18.jpg" alt="個人照片" class="profile-img">
-      <div class="info">
-        <h1>陳品婕</h1>
-        <p>學號: 114014073</p>
-        <p>Email: 114014073@live.asia.edu.tw</p>
-        <audio controls>
-  <source src="mp3/bg.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-      </div>
-    </div>
+  </div> </div> <script>
+    // 這裡保留你原本的 changeIntro 或動畫腳本
+    function changeIntro() {
+      const intros = [
+        "我是陳品婕，目前為大一生，對心理學領域充滿興趣...",
+        "我具備細心觀察與耐心傾聽的特質，喜歡探索人類行為背後的原因...",
+        "未來希望能運用專業知識，協助更多需要溝通輔助的個體..."
+      ];
+      const introTag = document.getElementById('intro');
+      const randomIntro = intros[Math.floor(Math.random() * intros.length)];
+      introTag.innerText = randomIntro;
+    }
+  </script>
 
-    <div class="section">
-      <h2>自我介紹</h2>
-     <p id="intro">
-我是陳品婕，目前為大一生，對心理學領域充滿興趣。過去透過觀察與學習，我逐漸關注到情緒表達與人際互動在個體發展中的重要性，尤其是自閉症兒童在溝通上的困難與需求。<br><br>
-我具備細心觀察與耐心傾聽的特質，曾透過個案觀察紀錄情緒反應與互動模式，並嘗試分析其行為背後的原因。未來希望能進一步學習專業知識，運用語言、非語言與輔具溝通方式，協助個體更有效地表達自己、建立與他人的連結。
-</p>
-      <button class="btn" onclick="changeIntro()">換一句自我介紹</button>
-    </div>
-
-    <div class="section">
-      <h2>技能</h2>
-      <p>
-・基礎網頁製作（HTML / CSS / JavaScript）<br>
-・行為觀察與紀錄能力（情緒反應、互動模式）<br>
-・基礎心理學概念（依附理論、發展心理學）<br>
-・溝通與同理能力<br>
-・資料整理與分析能力
-</p>
-    </div>
-
-    <div class="section">
-      <h2>聯絡方式</h2>
-      <p>歡迎透過 Email 與我聯繫！</p>
-    </div>
-  </div>
-<div class="section">
-  <h2>學習經歷</h2>
-  <p>
-  ・自閉症主題小論文研究：<br>
-  主題為「星兒的情緒畫布：國小男童情緒反應與社交互動模式的觀察研究」，透過實際觀察紀錄個案在不同情境下的情緒反應與互動方式，分析其溝通行為與壓力反應。<br><br>
-
-  ・個案觀察經驗：<br>
-  長時間觀察國小男童在生活中的行為表現，包含情緒起伏、人際互動與表達方式，並進行整理與分析，培養對特殊需求兒童的理解能力。
-  </p>
-</div>
-  <script>
+</body> </html>
    var select = function(s) {
   return document.querySelector(s);
 }
