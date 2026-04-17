@@ -5,162 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>履歷表</title>
   <style>
-  <style>
-  body {
-    font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-    background: #f4f7f4; 
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    color: #333;
-  }
+    body {
+      font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      background: #f4f7f4; 
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      color: #333;
+    }
 
-  /* 整體容器改為 Flex 佈局 */
-  .container {
-    max-width: 1000px;
-    width: 100%;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(46, 78, 46, 0.1);
-    display: flex; /* 開啟兩欄模式 */
-    flex-wrap: wrap; /* 手機版會自動換行 */
-    overflow: hidden;
-  }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(46, 78, 46, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
 
-  /* 左側側邊欄 (保留深綠色) */
-  .sidebar {
-    flex: 1;
-    min-width: 300px;
-    background: #2d5a27;
-    color: white;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    /* 左側側邊欄 - 森林綠配色 */
+    .sidebar {
+      flex: 1;
+      min-width: 300px;
+      background: #2d5a27;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-  .profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 20px;
-  }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 20px;
+    }
 
-  .sidebar h1 {
-    margin: 10px 0;
-    font-size: 28px;
-    letter-spacing: 2px;
-  }
+    .sidebar h1 {
+      margin: 10px 0;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
 
-  .sidebar p {
-    color: #e0eee0;
-    font-size: 15px;
-    margin: 5px 0;
-  }
+    .sidebar p {
+      color: #e0eee0;
+      font-size: 15px;
+      margin: 5px 0;
+    }
 
-  /* 右側主內容區 */
-  .main-content {
-    flex: 2;
-    min-width: 350px;
-    padding: 40px;
-  }
+    /* 右側主內容區 */
+    .main-content {
+      flex: 2;
+      min-width: 350px;
+      padding: 40px;
+    }
 
-  .section {
-    margin-bottom: 30px;
-  }
+    .section {
+      margin-bottom: 30px;
+    }
 
-  .section h2 {
-    color: #2d5a27;
-    font-size: 22px;
-    border-left: 5px solid #84a98c;
-    padding-left: 15px;
-    margin-bottom: 15px;
-  }
+    .section h2 {
+      color: #2d5a27;
+      font-size: 22px;
+      border-left: 5px solid #84a98c;
+      padding-left: 15px;
+      margin-bottom: 15px;
+    }
 
-  .section p {
-    line-height: 1.8;
-    color: #4a4a4a;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
+    .section p {
+      line-height: 1.8;
+      color: #4a4a4a;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
 
-  /* 播放器樣式優化 */
-  audio {
-    width: 100%;
-    margin-top: 20px;
-    filter: sepia(20%) saturate(70%) hue-rotate(80deg); /* 讓播放器顏色偏綠 */
-  }
+    /* 播放器樣式優化 */
+    audio {
+      width: 100%;
+      margin-top: 20px;
+      filter: sepia(20%) saturate(70%) hue-rotate(80deg);
+    }
 
-  /* 按鈕樣式 */
-  .btn {
-    padding: 10px 20px;
-    background: #52796f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+    .btn {
+      padding: 10px 20px;
+      background: #52796f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-  .btn:hover {
-    background: #354f52;
-  }
-</style>
+    .btn:hover {
+      background: #354f52;
+    }
   </style>
 </head>
 <body>
 
-  </div> </div> <script>
-    // 這裡保留你原本的 changeIntro 或動畫腳本
+  <div class="container">
+    <div class="sidebar">
+      <img src="images/photo18.jpg" alt="個人照片" class="profile-img">
+      <h1>陳品婕</h1>
+      <p>學號: 114014073</p>
+      <p>Email: pinjjj0218@live.asia.edu.tw</p>
+      <audio controls>
+        <source src="mp3/bg.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="main-content">
+      <div class="section">
+        <h2>自我介紹</h2>
+        <p id="intro">
+          我是陳品婕，目前為大一生，對心理學領域充滿興趣。過去透過觀察與學習，我逐漸關注到情緒表達與人際互動在個體發展中的重要性。
+        </p>
+        <button class="btn" onclick="changeIntro()">換一句自我介紹</button>
+      </div>
+
+      <div class="section">
+        <h2>學習經歷</h2>
+        <p>・自閉症主題小論文研究</p>
+        <p>・個案觀察經驗</p>
+      </div>
+
+      <div class="section">
+        <h2>專業技能</h2>
+        <p>・基礎網頁製作 (HTML/CSS)</p>
+        <p>・行為觀察與紀錄</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
     function changeIntro() {
       const intros = [
-        "我是陳品婕，目前為大一生，對心理學領域充滿興趣...",
-        "我具備細心觀察與耐心傾聽的特質，喜歡探索人類行為背後的原因...",
-        "未來希望能運用專業知識，協助更多需要溝通輔助的個體..."
+        "我是陳品婕，目前為大一生，對心理學領域充滿興趣。",
+        "我具備細心觀察與耐心傾聽的特質，喜歡探索人類行為背後的原因。",
+        "未來希望能運用專業知識，協助更多需要溝通輔助的個體。"
       ];
       const introTag = document.getElementById('intro');
-      const randomIntro = intros[Math.floor(Math.random() * intros.length)];
-      introTag.innerText = randomIntro;
+      const randomIndex = Math.floor(Math.random() * intros.length);
+      introTag.innerText = intros[randomIndex];
     }
-  </script>
-
-</body> </html>
-   var select = function(s) {
-  return document.querySelector(s);
-}
-
-function randomBetween(min,max)
-{
-    var number = Math.floor(Math.random()*(max-min+1)+min);
-  
-    if ( number !== 0 ){
-      return number;
-    }else {
-      return 0.5;
-    }
-}
-
-var tl = new TimelineMax();
-
-for(var i = 0; i < 20; i++){
-
-  var t = TweenMax.to(select('.bubble' + i), randomBetween(1, 1.5), {
-    x: randomBetween(12, 15) * (randomBetween(-1, 1)),
-    y: randomBetween(12, 15) * (randomBetween(-1, 1)), 
-    repeat:-1,
-    repeatDelay:randomBetween(0.2, 0.5),
-    yoyo:true,
-    ease:Elastic.easeOut.config(1, 0.5)
-  })
-
-  tl.add(t, (i+1)/0.6)
-}
-
-tl.seek(50);
   </script>
 
 </body>
